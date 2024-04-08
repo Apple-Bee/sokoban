@@ -1,14 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Sokoban from '../src/components/soko'; // Assuming the Sokoban component is in a file named Sokoban.tsx
+import Sokoban from '../src/components/soko'; 
+import '../src/css/sokocss.css';
 
-const App = () => {
+const App: React.FC = () => {
   return (
-    <div>
-      <h1>Sokoban Game</h1>
-      <Sokoban />
-    </div>
+    <React.StrictMode>
+      <div>
+        <h1>Sokoban Game</h1>
+        <Sokoban />
+      </div>
+    </React.StrictMode>
   );
 };
 
+ReactDOM.render(<App />, document.getElementById('root'));
+
 export default App;
+
+
