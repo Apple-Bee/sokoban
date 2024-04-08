@@ -10,9 +10,9 @@ const map: CellType[][] = [
   [1, 0, 4, 0, 0, 0, 0, 1],
   [1, 0, 0, 0, 0, 0, 0, 1],
   [1, 0, 0, 0, 0, 0, 0, 1],
+  [1, 0, 0, 0, 4, 0, 0, 1],
   [1, 0, 0, 0, 0, 0, 0, 1],
-  [1, 0, 0, 0, 0, 0, 0, 1],
-  [1, 0, 0, 0, 0, 0, 0, 1],
+  [1, 0, 4, 0, 0, 4, 0, 1],
   [1, 0, 0, 0, 0, 0, 0, 1],
   [1, 1, 1, 1, 1, 1, 1, 1],
 ];
@@ -104,7 +104,15 @@ const Sokoban: React.FC = () => {
     if (boxes.length === 0 && targets.length === 0) {
       setGameFinished(true); // Update game finished status
     }
+    if (targets.length === 0 && boxes.length > 0) {
+        setGameFinished(true); // Update game finished status
+      }
+      console.log("Game finished:", boxes.length === 0 && targets.length === 0);
   };
+    
+    // Log the result
+  
+  
 
   return (
     <div>
